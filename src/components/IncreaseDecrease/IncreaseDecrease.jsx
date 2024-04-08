@@ -7,17 +7,21 @@ function IncreaseDecrease() {
   const dispatch = useDispatch();
   const stateValue = useSelector((state) => state);
 
-  const onClick = () => {
-    console.log("stop");
-    //dispatch(increaseValue());
-    //setCount((count) => count + 1)
+  const onClickAdd = () => {
+    console.log("add");
+    dispatch(increaseValue());
+  };
+
+  const onClickSubtract = () => {
+    console.log("subtract");
+    dispatch(decreaseValue());
   };
 
   return (
     <div className="card">
-      <button onClick={onClick}>+</button>
+      <button onClick={onClickAdd}>+</button>
       <div>count is {stateValue}</div>
-      <button onClick={onClick}>-</button>
+      <button onClick={onClickSubtract}>-</button>
     </div>
   );
 }
