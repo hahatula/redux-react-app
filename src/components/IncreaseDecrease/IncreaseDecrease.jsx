@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseValue, decreaseValue } from "../../redux/actions";
 
 function IncreaseDecrease() {
-  //const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const stateValue = useSelector((state) => state);
 
