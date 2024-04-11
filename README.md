@@ -1,8 +1,10 @@
-# React + Vite
+# React-Redux Training Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This project is a hands-on training exercise for learning React and Redux. It aims to demonstrate the use of React for building user interfaces along with Redux for state management. The application features a simple yet interactive UI that allows users to perform specific actions that showcase React and Redux capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **React Components**: Utilizes functional components with hooks to build the UI.
+- **State Management**: Implements Redux for global state management across the application.
