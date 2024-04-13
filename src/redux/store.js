@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { firstReducer } from "./reducers";
+import { firstReducer, secondReducer } from "./reducers";
 
 export const store = configureStore({
-  reducer: firstReducer,
+  reducer: {
+    increaseDecrease: firstReducer,
+    userTypes: secondReducer, 
+  }
 });

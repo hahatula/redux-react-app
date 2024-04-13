@@ -3,7 +3,7 @@ import { increaseValue, decreaseValue } from "../../redux/actions";
 
 function IncreaseDecrease() {
   const dispatch = useDispatch();
-  const stateValue = useSelector((state) => state);
+  const stateValue = useSelector((state) => state.increaseDecrease);
 
   const onClickAdd = () => {
     console.log("add");

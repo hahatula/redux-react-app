@@ -1,4 +1,4 @@
-import { INCREASE_VALUE, DECREASE_VALUE } from "./action-types";
+import { INCREASE_VALUE, DECREASE_VALUE, KEY_DOWN } from "./action-types";
 export const firstReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREASE_VALUE:
@@ -8,3 +8,11 @@ export const firstReducer = (state = 0, action) => {
   }
   return state;
 };
+
+export const secondReducer = (state = "", action) => {
+  switch (action.type) {
+    case KEY_DOWN:
+      return action.payload;
+  }
+  return state;
+}
