@@ -1,0 +1,11 @@
+.counter {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.counter__button {
+    background-color: transparent;
+    width: 37px;
+    height: 26px;
+}

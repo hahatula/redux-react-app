@@ -9,7 +9,7 @@ export const firstReducer = (state = 0, action) => {
   return state;
 };
 
-export const secondReducer = (state = "", action) => {
+export const secondReducer = (state = "Change me!", action) => {
   switch (action.type) {
     case KEY_DOWN:
       return action.payload;

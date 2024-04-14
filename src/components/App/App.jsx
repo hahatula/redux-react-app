@@ -4,10 +4,10 @@ import InputWithHeader from "../InputWithHeader/InputWithHeader";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <InputWithHeader />
       <IncreaseDecrease />
-    </>
+    </div>
   );
 }
 

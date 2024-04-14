@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { increaseValue, decreaseValue } from "../../redux/actions";
+import "./IncreaseDecrease.css"
 
 function IncreaseDecrease() {
   const dispatch = useDispatch();
@@ -16,10 +17,10 @@ function IncreaseDecrease() {
   };
 
   return (
-    <div className="card">
-      <button onClick={onClickAdd}>+</button>
-      <div>count is {stateValue}</div>
-      <button onClick={onClickSubtract}>-</button>
+    <div className="counter">
+      <button onClick={onClickAdd} className="counter__button framed">+</button>
+      <div className="counter__value">count is {stateValue}</div>
+      <button onClick={onClickSubtract} className="counter__button framed">-</button>
     </div>
   );
 }
