@@ -8,3 +8,6 @@ This project is a hands-on training exercise for learning React and Redux. It ai
 
 - **React Components**: Utilizes functional components with hooks to build the UI.
 - **State Management**: Implements Redux for global state management across the application.
+
+## Link
+https://hahatula.github.io/redux-react-app/
