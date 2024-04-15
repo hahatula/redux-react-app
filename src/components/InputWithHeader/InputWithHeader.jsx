@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { inputValue } from "../../redux/actions";
+import { getUserIsTyping } from "../../redux/selectors";
 import "./InputWithHeader.css";
 
 function InputWithHeader() {
   const dispatch = useDispatch();
-  const stateValue = useSelector((state) => state.userTypes);
+  const stateValue = useSelector(getUserIsTyping);
   const [isActive, setIsActive] = useState(false);
 
   const onChange = (event) => {
@@ -17,11 +18,17 @@ function InputWithHeader() {
   useEffect(() => {
     if (isActive) {
       const timer = setTimeout(() => {
-        setIsActive(false);  // Deactivate the class after 1 second
+        setIsActive(false); // Deactivate the class after 1 second
       }, 100);
-      return () => clearTimeout(timer);  // Clean up the timer
+      return () => clearTimeout(timer); // Clean up the timer
     }
   }, [isActive]);
+
+  useEffect(() => {
+    return () => {
+      setIsActive(false);
+    };
+  }, []); //on unmount
 
   return (
     <div className="text-input">

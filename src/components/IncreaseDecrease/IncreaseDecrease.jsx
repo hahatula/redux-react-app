@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { increaseValue, decreaseValue } from "../../redux/actions";
+import { getIncreaseDecrease } from "../../redux/selectors";
 import "./IncreaseDecrease.css"
 
 function IncreaseDecrease() {
   const dispatch = useDispatch();
-  const stateValue = useSelector((state) => state.increaseDecrease);
+  const stateValue = useSelector(getIncreaseDecrease);
 
   const onClickAdd = () => {
     console.log("add");
