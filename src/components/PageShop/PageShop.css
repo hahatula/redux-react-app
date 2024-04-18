@@ -1,0 +1,25 @@
+.shop {
+    width: 696px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "search users"
+    "products users";
+}
+
+.title {
+    grid-area: title;
+}
+
+.search {
+    grid-area: search;
+}
+
+.products {
+    grid-area: products;
+}
+
+.users {
+    grid-area: users;
+}

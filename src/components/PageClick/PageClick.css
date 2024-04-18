@@ -1,0 +1,27 @@
+.content {
+    display: flex;
+    width: 696px;
+    padding: 0 50px;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+  
+  .framed {
+    border: 1px solid #000;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .framed:active,
+  .framed-active {
+    border: 2px solid;
+    border-radius: 2px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
