@@ -7,7 +7,7 @@ import { store } from "./redux/store";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/redux-react-app">
     <Provider store={store}>
       <App />
     </Provider>
