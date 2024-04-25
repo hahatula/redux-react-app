@@ -18,17 +18,10 @@ function InputWithHeader() {
   useEffect(() => {
     if (isActive) {
       const timer = setTimeout(() => {
-        setIsActive(false); // Deactivate the class after 1 second
-      }, 100);
-      return () => clearTimeout(timer); // Clean up the timer
+        setIsActive(false); 
+      }, 100); // Deactivate the class after timeout
     }
   }, [isActive]);
-
-  useEffect(() => {
-    return () => {
-      setIsActive(false);
-    };
-  }, []); //on unmount
 
   return (
     <div className="text-input">
