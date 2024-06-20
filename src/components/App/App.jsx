@@ -14,6 +14,7 @@ function App() {
         <Route path="/click" element={<PageClick />} />
         <Route path="/shop" element={<PageShop />} />
       </Routes>
+      {/* TODO footer */}
     </div>
   );
 }

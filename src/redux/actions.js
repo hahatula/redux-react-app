@@ -6,6 +6,7 @@ import {
   GET_DATA_FAILED,
   GET_DATA_SUCCEEDED,
 } from "./action-types";
+
 export const increaseValue = () => ({
   type: INCREASE_VALUE,
 });
@@ -25,7 +26,7 @@ export const getDataSucceeded = (payload) => ({
   type: GET_DATA_SUCCEEDED,
   payload,
 });
-export const getDataFailed = (payload) => ({
+export const getDataFailed = (error) => ({
   type: GET_DATA_FAILED,
   payload: error,
 });
