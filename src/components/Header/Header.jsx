@@ -6,7 +6,7 @@ function Header() {
   <nav>
     <ul className="header__menu">
         <Link to="/click">Click for fun</Link>
-        <Link to="/shop">Visit fake shop</Link>
+        <Link to="/shop">Visit fake store</Link>
     </ul>
  </nav>);
 }

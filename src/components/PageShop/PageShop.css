@@ -10,9 +10,9 @@ ul {
   grid-template-rows: repeat(2, min-content) 1fr;
   gap: 17px 28px;
   grid-template-areas:
-    "title title"
-    "search users"
-    "products users";
+    'title title'
+    'search users'
+    'products users';
 }
 
 .title {
@@ -22,6 +22,8 @@ ul {
 
 .search {
   grid-area: search;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
 .search__input {
@@ -63,4 +65,3 @@ ul {
   font-weight: 400;
   margin: 0;
 }
-

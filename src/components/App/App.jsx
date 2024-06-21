@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import PageClick from "../PageClick/PageClick";
 import PageShop from "../PageShop/PageShop";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
         <Route path="/click" element={<PageClick />} />
         <Route path="/shop" element={<PageShop />} />
       </Routes>
-      {/* TODO footer */}
+      <Footer />
     </div>
   );
-}
+} 
 
 export default App;

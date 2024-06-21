@@ -25,7 +25,7 @@ function PageShop() {
 
   return (
     <div className="shop">
-      <h1 className="title">Welcome to the fake shop</h1>
+      <h1 className="title">Welcome to the fake store</h1>
       <div className="search">
         <FlickeringInput
           placeholder="Please enter a search query"
