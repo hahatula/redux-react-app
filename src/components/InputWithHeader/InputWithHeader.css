@@ -1,19 +1,9 @@
+.text-input {
+    width: 50%;
+}
 .text-input__header {
     font-size: 12px;
     font-weight: 400;
     height: 22px;
     margin-bottom: 12px;
-}
-
-.text-input__input-field {
-    box-sizing: border-box;
-    background-color: transparent;
-    padding: 0 10px;
-    width: 168px;
-    height: 26px;
-    font-size: 12px;
-}
-
-.text-input__input-field:focus-visible {
-    outline: none;
 }

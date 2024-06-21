@@ -2,57 +2,49 @@ import './PageShop.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from '../../redux/selectors';
 import { getProducts, getUsers } from '../../redux/actions';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import UserItem from '../UserItem/UserItem';
+import ProductItem from '../ProductItem/ProductItem';
+import FlickeringInput from '../FlickeringInput/FlickeringInput';
 
 function PageShop() {
   const dispatch = useDispatch();
   const { products, users, loading, error } = useSelector(getData);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getUsers());
   }, []);
 
+  const onChange = (event) => {
+    const text = event.target.value.toLowerCase();
+    console.log(text);
+    setQuery(text);
+  };
+
   return (
     <div className="shop">
       <h1 className="title">Welcome to the fake shop</h1>
       <div className="search">
-        <input type="text" className="search__input" />
+        <FlickeringInput
+          placeholder="Please enter a search query"
+          onChange={onChange}
+        />
       </div>
       <ul className="products">
         {loading && <div>Loading...</div>}
-        {products.map((item, index) => {
-          return (
-            <li key={index} className="product">
-              <div className="poduct__img-container">
-                <img
-                  src={item.image}
-                  alt="product photo"
-                  className="product__img"
-                />
-              </div>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-            </li>
-          );
-        })}
+        {products
+          .filter((item) => item.title.toLowerCase().includes(query))
+          .map((item, index) => (
+            <ProductItem key={index} item={item} />
+          ))}
       </ul>
       <ul className="users">
         <h2 className="users__title">Users</h2>
-        {users.map((user, index) => {
-          return (
-            <li key={index} className="user">
-              <p className="user__info">
-                User name: {user.name.firstname} {user.name.lastname}
-              </p>
-              <p className="user__info">
-                Address: {user.address.street} {user.address.number},{' '}
-                {user.address.city}
-              </p>
-              <p className="user__info">Phone number: {user.phone}</p>
-            </li>
-          );
-        })}
+        {users.map((user, index) => (
+          <UserItem key={index} user={user} />
+        ))}
       </ul>
     </div>
   );
