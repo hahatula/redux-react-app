@@ -1,24 +1,29 @@
-import { GET_DATA } from './action-types';
-import { getDataFailed, getDataSucceeded } from './actions';
+import { GET_DATA, GET_USERS } from './action-types';
+import { getProductsFailed, getProductsSucceeded, getUsersSucceeded, getUsersFailed } from './actions';
 
-export const testMiddleware = (store) => (next) => (action) => {
+const request = (url, successAction, failureAction, next) => {
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((json) => {
+        console.log(json);
+      next(successAction(json));
+    })
+    .catch((error) => {
+      next(failureAction(error));
+    });
+};
+
+export const fakeStoreMiddleware = (store) => (next) => (action) => {
   if (action.type === GET_DATA) {
-    console.log('GET_DATA action intercepted in middleware');
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        console.log(res.json);
-        return res.json();
-      })
-      .then((json) => {
-        console.log('Data fetched successfully:', json);
-        next(getDataSucceeded(json));
-      })
-      .catch((error) => {
-        next(getDataFailed(error));
-      });
+    request('https://fakestoreapi.com/products', getProductsSucceeded, getProductsFailed, next)
+  }
+  if (action.type === GET_USERS) {
+    request('https://fakestoreapi.com/users', getUsersSucceeded, getUsersFailed, next)
   }
   return next(action);
 };

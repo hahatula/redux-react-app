@@ -4,5 +4,6 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
+  padding: 0 40px;
 }

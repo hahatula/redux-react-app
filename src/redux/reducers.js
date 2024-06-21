@@ -5,6 +5,9 @@ import {
   GET_DATA,
   GET_DATA_SUCCEEDED,
   GET_DATA_FAILED,
+  GET_USERS,
+  GET_USERS_SUCCEEDED,
+  GET_USERS_FAILED,
 } from './action-types';
 
 export const firstReducer = (state = 0, action) => {
@@ -29,30 +32,46 @@ export const secondReducer = (state = 'Change me!', action) => {
 
 const initStore = {
   products: [],
-  loading: false,
+  users: [],
+  loadingProducts: false,
+  loadingUsers: false,
   error: null,
 };
 
 export const apiReducer = (state = initStore, action) => {
   switch (action.type) {
     case GET_DATA:
-      console.log('Handling GET_DATA action');
       return {
         ...state,
-        loading: true
+        loadingProducts: true,
       };
     case GET_DATA_SUCCEEDED:
-      console.log('Handling GET_DATA_SUCCEEDED action');
       return {
         ...state,
         products: action.payload,
-        loading: false,
+        loadingProducts: false,
       };
     case GET_DATA_FAILED:
-      console.log('Handling GET_DATA_FAILED action');
       return {
         ...state,
-        loading: false,
+        loadingProducts: false,
+        error: action.payload,
+      };
+    case GET_USERS:
+      return {
+        ...state,
+        loadingUsers: true,
+      };
+    case GET_USERS_SUCCEEDED:
+      return {
+        ...state,
+        users: action.payload,
+        loadingUsers: false,
+      };
+    case GET_USERS_FAILED:
+      return {
+        ...state,
+        loadingUsers: false,
         error: action.payload,
       };
     default:

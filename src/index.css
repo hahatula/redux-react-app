@@ -31,6 +31,10 @@ body {
   min-height: 100vh;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 /* @media (prefers-color-scheme: light) {
   :root {
     color: #000;

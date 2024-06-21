@@ -5,6 +5,9 @@ import {
   GET_DATA,
   GET_DATA_FAILED,
   GET_DATA_SUCCEEDED,
+  GET_USERS,
+  GET_USERS_SUCCEEDED,
+  GET_USERS_FAILED,
 } from "./action-types";
 
 export const increaseValue = () => ({
@@ -19,14 +22,26 @@ export const inputValue = (text) => ({
 });
 
 //for using middleware
-export const getData = () => ({
+export const getProducts = () => ({
   type: GET_DATA,
 });
-export const getDataSucceeded = (payload) => ({
+export const getProductsSucceeded = (payload) => ({
   type: GET_DATA_SUCCEEDED,
   payload,
 });
-export const getDataFailed = (error) => ({
+export const getProductsFailed = (error) => ({
   type: GET_DATA_FAILED,
+  payload: error,
+});
+
+export const getUsers = () => ({
+  type: GET_USERS,
+});
+export const getUsersSucceeded = (payload) => ({
+  type: GET_USERS_SUCCEEDED,
+  payload,
+});
+export const getUsersFailed = (error) => ({
+  type: GET_USERS_FAILED,
   payload: error,
 });
